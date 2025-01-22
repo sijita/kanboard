@@ -1,0 +1,45 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "avatar": "ttps://api.dicebear.com/9.x/big-smile/svg?seed=JohnDoe"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "avatar": "ttps://api.dicebear.com/9.x/big-smile/svg?seed=JaneSmith"
+        },
+        {
+            "id": 3,
+            "name": "Mike Johnson",
+            "avatar": "ttps://api.dicebear.com/9.x/big-smile/svg?seed=MikeJohnson"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "title": "Design new landing page",
+            "description": "Create a modern and attractive landing page design",
+            "status": "pending",
+            "assignedTo": 1,
+            "createdAt": "2025-01-05"
+        },
+        {
+            "id": 2,
+            "title": "Implement authentication",
+            "description": "Add user authentication system",
+            "status": "inprogress",
+            "assignedTo": 2,
+            "createdAt": "2024-11-30"
+        },
+        {
+            "id": 3,
+            "title": "Write API documentation",
+            "description": "Document all API endpoints",
+            "status": "completed",
+            "assignedTo": 3,
+            "createdAt": "2024-12-24"
+        }
+    ]
+}
