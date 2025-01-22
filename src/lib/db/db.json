@@ -1,42 +1,42 @@
 {
     "users": [
         {
-            "id": 1,
+            "id": "1",
             "name": "John Doe",
-            "avatar": "ttps://api.dicebear.com/9.x/big-smile/svg?seed=JohnDoe"
+            "avatar": "https://api.dicebear.com/9.x/big-smile/svg?seed=JohnDoe"
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Jane Smith",
-            "avatar": "ttps://api.dicebear.com/9.x/big-smile/svg?seed=JaneSmith"
+            "avatar": "https://api.dicebear.com/9.x/big-smile/svg?seed=JaneSmith"
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "Mike Johnson",
-            "avatar": "ttps://api.dicebear.com/9.x/big-smile/svg?seed=MikeJohnson"
+            "avatar": "https://api.dicebear.com/9.x/big-smile/svg?seed=MikeJohnson"
         }
     ],
     "tasks": [
         {
-            "id": 1,
-            "title": "Design new landing page",
-            "description": "Create a modern and attractive landing page design",
+            "id": "1",
+            "title": "Diseñar landing page",
+            "description": "Crear la estructura de la landing page",
             "status": "pending",
             "assignedTo": 1,
             "createdAt": "2025-01-05"
         },
         {
-            "id": 2,
-            "title": "Implement authentication",
-            "description": "Add user authentication system",
+            "id": "2",
+            "title": "Implementar autenticación de usuarios",
+            "description": "Implementar la autenticación de usuarios",
             "status": "inprogress",
             "assignedTo": 2,
             "createdAt": "2024-11-30"
         },
         {
-            "id": 3,
-            "title": "Write API documentation",
-            "description": "Document all API endpoints",
+            "id": "3",
+            "title": "Documentar API endpoints",
+            "description": "Documentar los endpoints de la API",
             "status": "completed",
             "assignedTo": 3,
             "createdAt": "2024-12-24"
