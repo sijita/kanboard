@@ -3,7 +3,7 @@ export interface Task {
   title: string;
   description: string;
   status: 'pending' | 'inprogress' | 'completed';
-  assignedTo: number;
+  assignedTo: string;
   createdAt: string;
 };
 
