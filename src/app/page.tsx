@@ -10,7 +10,7 @@ export default function Home() {
       <EditTaskModal />
       <div className="max-w-7xl mx-auto space-y-5">
         <div className="flex justify-between items-center flex-wrap gap-5">
-          <h1 className="text-3xl font-bold text-gray-900">Kanboard</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Tareas</h1>
           <AddTaskButton />
         </div>
         <ColumnsRows />
