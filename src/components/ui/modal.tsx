@@ -12,7 +12,7 @@ export default function Modal({ children, text, closeModal }: ModalProps) {
   const { deleteParams } = useHandleParams();
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-5">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-5 z-[99]">
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
