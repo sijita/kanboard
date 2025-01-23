@@ -35,16 +35,26 @@ export default function useHandleTasks() {
       const newTask: Task = {
         ...taskData,
         id: uuidv4(),
-        assignedTo: Number(taskData.assignedTo),
-        createdAt: new Date().toLocaleDateString().split('T')[0],
+        assignedTo: taskData.assignedTo,
+        createdAt: new Date().toLocaleDateString(undefined, {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+        }),
       };
 
       const parsedTask = addTaskSchema.safeParse(newTask);
 
       if (!parsedTask.success) {
+        const errorMessages = Object.entries(
+          parsedTask.error.flatten().fieldErrors
+        )
+          .map(([field, errors]) => `${field}: ${errors.join(', ')}`)
+          .join('. ');
+
         return {
           type: 'error',
-          message: parsedTask.error.flatten().fieldErrors,
+          message: errorMessages ?? 'Error de validacion',
         };
       }
 
@@ -96,10 +106,47 @@ export default function useHandleTasks() {
     }
   };
 
+  const editTask = async (editedTask: Task) => {
+    try {
+      const taskIndex = tasks.findIndex((t) => t.id === editedTask.id);
+      if (taskIndex === -1) return;
+
+      const parsedTask = addTaskSchema.safeParse(editedTask);
+
+      if (!parsedTask.success) {
+        const errorMessages = Object.entries(
+          parsedTask.error.flatten().fieldErrors
+        )
+          .map(([field, errors]) => `${field}: ${errors.join(', ')}`)
+          .join('. ');
+
+        return {
+          type: 'error',
+          message: errorMessages ?? 'Error de validacion',
+        };
+      }
+
+      const task = parsedTask.data;
+      const updatedTask = { ...tasks[taskIndex], ...task };
+
+      await db.saveTask(updatedTask);
+      mutateTasks(
+        (prev = []) =>
+          prev.map((task) => (task.id === editedTask.id ? updatedTask : task)),
+        false
+      );
+
+      return { type: 'success', message: 'Tarea actualizada con exito' };
+    } catch {
+      return { type: 'error', message: 'Error al actualizar la tarea' };
+    }
+  };
+
   return {
     tasks,
     users,
     addTask,
+    editTask,
     updateTaskStatus,
   };
 }
