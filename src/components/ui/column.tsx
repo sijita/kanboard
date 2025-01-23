@@ -22,7 +22,7 @@ export default function Column({ title, status, tasks, icon }: ColumnProps) {
         <h2 className="font-semibold text-lg text-gray-700">{title}</h2>
         <div className="p-2 bg-black/10 rounded-full">{icon}</div>
       </div>
-      {tasks && tasks.length > 0 ? (
+      {tasks && tasks?.length > 0 ? (
         <div className="space-y-3">
           {tasks?.map((task) => (
             <TaskCard key={task.id} task={task} />

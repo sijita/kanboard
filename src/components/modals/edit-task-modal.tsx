@@ -9,7 +9,10 @@ export default function EditTaskModal() {
   return (
     <>
       {isModalOpen('editTaskModal') && (
-        <Modal closeModal={() => closeModal('editTaskModal')}>
+        <Modal
+          text={<h2 className="text-xl font-semibold">Editar tarea</h2>}
+          closeModal={() => closeModal('editTaskModal')}
+        >
           <EditTaskForm />
         </Modal>
       )}
