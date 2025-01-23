@@ -9,7 +9,7 @@ export default function useHandleParams() {
   const params = new URLSearchParams(searchParams.toString());
   const { replace } = useRouter();
 
-  const openTask = (taskId: string) => {
+  const onOpenTask = (taskId: string) => {
     openModal('editTaskModal');
     params.set('id', taskId);
 
@@ -24,7 +24,7 @@ export default function useHandleParams() {
   };
 
   return {
-    openTask,
+    onOpenTask,
     searchParams,
     params,
     deleteParams,

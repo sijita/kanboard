@@ -10,7 +10,7 @@ type TaskCardProps = {
 };
 
 export default function TaskCard({ task }: TaskCardProps) {
-  const { openTask } = useHandleParams();
+  const { onOpenTask } = useHandleParams();
   const { handleDragStart } = useHandleDrag({ task });
   const { users } = useHandleTasks();
   const assignedUser = users?.find(
@@ -27,7 +27,7 @@ export default function TaskCard({ task }: TaskCardProps) {
       draggable
       onDragStart={(e) => handleDragStart(e as unknown as React.DragEvent)}
       className="bg-white rounded-lg shadow-sm p-4 mb-3 cursor-move hover:shadow-md transition-shadow space-y-3 w-full text-start"
-      onClick={() => openTask(task?.id)}
+      onClick={() => onOpenTask(task?.id)}
     >
       <div className="flex w-full items-center justify-between gap-3 flex-wrap-reverse">
         <div className="flex items-center gap-2">
