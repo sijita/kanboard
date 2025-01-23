@@ -16,7 +16,7 @@ export default function Button({
     <button
       type={type}
       className={`px-4 py-2 rounded-lg ${
-        icon && 'flex items-center gap-2'
+        icon && 'flex items-center justify-center gap-2'
       } ${className}`}
       {...props}
     >
