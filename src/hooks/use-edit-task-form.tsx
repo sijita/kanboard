@@ -31,6 +31,6 @@ export default function useEditTaskForm() {
     users,
     taskToEdit,
     closeModal,
-    deleteParams
+    deleteParams,
   };
 }

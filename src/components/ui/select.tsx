@@ -16,18 +16,18 @@ export default function Select({
   ...props
 }: SelectProps) {
   return (
-    <div className="space-y-1">
-      <label className="block text-sm font-medium text-gray-700">
+    <div className='space-y-1'>
+      <label className='block text-sm font-medium text-gray-700'>
         {label}
-        {required && <span className="text-red-500">*</span>}
+        {required && <span className='text-red-500'>*</span>}
       </label>
       <select
         name={name}
-        className="block w-full rounded-md border border-gray-300 shadow-sm focus:border-[#baff30] focus:ring-[#baff30] bg-white px-4 py-2"
+        className='block w-full rounded-md border border-gray-300 bg-white px-4 py-2 shadow-sm focus:border-[#baff30] focus:ring-[#baff30]'
         required={required}
         {...props}
       >
-        <option value="" disabled>
+        <option value='' disabled>
           Seleccione una opción
         </option>
         {options.map((option) => (

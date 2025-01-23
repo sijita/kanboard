@@ -9,8 +9,8 @@ export default function AddTaskButton() {
   return (
     <Button
       onClick={() => openModal('addTaskModal')}
-      className="max-[400px]:w-full max-[400px]:justify-center flex items-center gap-2 bg-[#baff30] text-black hover:bg-[#baff30]/80 transition-colors"
-      text="Añadir"
+      className='flex items-center gap-2 bg-[#baff30] text-black transition-colors hover:bg-[#baff30]/80 max-[400px]:w-full max-[400px]:justify-center'
+      text='Añadir'
       icon={<Plus size={20} />}
     />
   );

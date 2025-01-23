@@ -14,7 +14,7 @@ export default function TaskCard({ task }: TaskCardProps) {
   const { handleDragStart } = useHandleDrag({ task });
   const { users } = useHandleTasks();
   const assignedUser = users?.find(
-    (u) => Number(u?.id) === Number(task?.assignedTo)
+    (u) => Number(u?.id) === Number(task?.assignedTo),
   );
 
   return (
@@ -26,28 +26,28 @@ export default function TaskCard({ task }: TaskCardProps) {
       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
       draggable
       onDragStart={(e) => handleDragStart(e as unknown as React.DragEvent)}
-      className="bg-white rounded-lg shadow-sm p-4 mb-3 cursor-move hover:shadow-md transition-shadow space-y-3 w-full text-start"
+      className='mb-3 w-full cursor-move space-y-3 rounded-lg bg-white p-4 text-start shadow-sm transition-shadow hover:shadow-md'
       onClick={() => onOpenTask(task?.id)}
     >
-      <div className="flex w-full items-center justify-between gap-3 flex-wrap-reverse">
-        <div className="flex items-center gap-2">
+      <div className='flex w-full flex-wrap-reverse items-center justify-between gap-3'>
+        <div className='flex items-center gap-2'>
           {assignedUser?.avatar && (
             <img
               src={assignedUser.avatar}
               alt={assignedUser.name}
-              className="w-6 h-6 rounded-full"
+              className='h-6 w-6 rounded-full'
             />
           )}
-          <span className="text-sm">{assignedUser?.name}</span>
+          <span className='text-sm'>{assignedUser?.name}</span>
         </div>
-        <div className="flex items-center gap-1">
-          <Calendar className="text-gray-500" size={13} />
-          <span className="text-xs text-gray-500">{task.createdAt}</span>
+        <div className='flex items-center gap-1'>
+          <Calendar className='text-gray-500' size={13} />
+          <span className='text-xs text-gray-500'>{task.createdAt}</span>
         </div>
       </div>
-      <div className="space-y-1">
-        <h3 className="font-semibold text-gray-800">{task.title}</h3>
-        <p className="text-sm text-gray-600 pl-1">{task.description}</p>
+      <div className='space-y-1'>
+        <h3 className='font-semibold text-gray-800'>{task.title}</h3>
+        <p className='pl-1 text-sm text-gray-600'>{task.description}</p>
       </div>
     </motion.button>
   );

@@ -15,15 +15,15 @@ export default function Input({
   ...props
 }: InputProps) {
   return (
-    <div className="space-y-1">
-      <label className="block text-sm font-medium text-gray-700">
+    <div className='space-y-1'>
+      <label className='block text-sm font-medium text-gray-700'>
         {label}
-        {required && <span className="text-red-500">*</span>}
+        {required && <span className='text-red-500'>*</span>}
       </label>
       <input
         name={name}
         type={type}
-        className="block w-full rounded-md border border-gray-300 shadow-sm focus:border-[#baff30] focus:ring-[#baff30] py-2 px-3"
+        className='block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-[#baff30] focus:ring-[#baff30]'
         required={required}
         {...props}
       />

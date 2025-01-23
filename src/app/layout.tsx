@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className={`${sora.className} antialiased flex flex-col`}>
+    <html lang='es'>
+      <body className={`${sora.className} flex flex-col antialiased`}>
         <Providers>
           <Navbar />
           {children}

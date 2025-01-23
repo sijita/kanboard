@@ -13,7 +13,7 @@ export default function useAddTaskForm() {
     const { type, message } = await addTask(data as unknown as Task);
 
     if (type === 'success') {
-      closeModal("addTaskModal");
+      closeModal('addTaskModal');
       toast.success(message);
     } else {
       toast.error(message);
