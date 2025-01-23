@@ -7,7 +7,7 @@ interface ModalContextProps {
 }
 
 export const ModalContext = createContext<ModalContextProps>(
-  {} as ModalContextProps
+  {} as ModalContextProps,
 );
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {

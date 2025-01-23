@@ -12,21 +12,21 @@ export default function Modal({ children, text, closeModal }: ModalProps) {
   const { deleteParams } = useHandleParams();
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-5 z-[99]">
+    <div className='fixed inset-0 z-[99] flex items-center justify-center bg-black/50 p-5'>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: 'easeInOut', type: 'spring' }}
-        className="bg-white rounded-lg p-6 w-full max-w-md space-y-5"
+        className='w-full max-w-md space-y-5 rounded-lg bg-white p-6'
       >
-        <div className="flex justify-between items-center">
+        <div className='flex items-center justify-between'>
           {text}
           <button
             onClick={() => {
               deleteParams();
               closeModal();
             }}
-            className="text-gray-500 hover:text-gray-700"
+            className='text-gray-500 hover:text-gray-700'
           >
             <X size={20} />
           </button>

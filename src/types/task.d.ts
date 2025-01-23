@@ -5,6 +5,6 @@ export interface Task {
   status: 'pending' | 'inprogress' | 'completed';
   assignedTo: string;
   createdAt: string;
-};
+}
 
 export type TaskStatus = Task['status'];

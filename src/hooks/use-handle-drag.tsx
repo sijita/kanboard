@@ -21,7 +21,7 @@ export default function useHandleDrag({
 
   const handleDrop = async (e: React.DragEvent) => {
     if (!status) return;
-    
+
     e.preventDefault();
     const taskId = e.dataTransfer.getData('taskId');
     const res = await updateTaskStatus(taskId, status);
