@@ -46,7 +46,7 @@ export default function EditTaskForm() {
           }}
         />
         <Button
-          text="Crear tarea"
+          text="Guardar"
           type="submit"
           className="px-4 py-2 text-sm font-medium text-black bg-[#baff30] rounded-md hover:bg-[#baff30]/80 transition-colors"
         />
