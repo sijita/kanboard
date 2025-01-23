@@ -9,7 +9,10 @@ export default function AddTaskModal() {
   return (
     <>
       {isModalOpen('addTaskModal') && (
-        <Modal closeModal={() => closeModal('addTaskModal')}>
+        <Modal
+          text={<h2 className="text-xl font-semibold">Nueva tarea</h2>}
+          closeModal={() => closeModal('addTaskModal')}
+        >
           <AddTaskForm />
         </Modal>
       )}
