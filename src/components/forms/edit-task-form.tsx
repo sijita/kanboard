@@ -3,10 +3,18 @@ import TextArea from '../ui/text-area';
 import Select from '../ui/select';
 import Button from '../ui/button';
 import useEditTaskForm from '@/hooks/use-edit-task-form';
+import { LoaderCircle } from 'lucide-react';
 
 export default function EditTaskForm() {
   const { submitAction, users, closeModal, taskToEdit, deleteParams } =
     useEditTaskForm();
+
+  if (!taskToEdit)
+    return (
+      <div className="flex items-center justify-center">
+        <LoaderCircle className="animate-spin" color="#baff30" size={40} />
+      </div>
+    );
 
   return (
     <form action={submitAction}>
