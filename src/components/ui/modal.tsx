@@ -1,5 +1,6 @@
 import useHandleParams from '@/hooks/use-handle-params';
 import { X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface ModalProps {
   children: React.ReactNode;
@@ -12,7 +13,12 @@ export default function Modal({ children, text, closeModal }: ModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-5">
-      <div className="bg-white rounded-lg p-6 w-full max-w-md space-y-5">
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', type: 'spring' }}
+        className="bg-white rounded-lg p-6 w-full max-w-md space-y-5"
+      >
         <div className="flex justify-between items-center">
           {text}
           <button
@@ -26,7 +32,7 @@ export default function Modal({ children, text, closeModal }: ModalProps) {
           </button>
         </div>
         {children}
-      </div>
+      </motion.div>
     </div>
   );
 }
