@@ -15,7 +15,7 @@ export default function DeleteTaskModal({ taskId }: { taskId: string }) {
           text={<h2 className="text-xl font-semibold">Eliminar tarea</h2>}
           closeModal={() => closeModal('deleteTaskModal')}
         >
-          <div className="space-y-3">
+          <div className="flex flex-col gap-6">
             <div className="space-y-1">
               <h3 className="text-lg font-semibold">
                 ¿Seguro que quieres eliminar la tarea?
@@ -24,7 +24,7 @@ export default function DeleteTaskModal({ taskId }: { taskId: string }) {
                 Esta acción no se puede deshacer
               </p>
             </div>
-            <div className="space-y-2 mt-5">
+            <div className="space-y-2">
               <Button
                 text="Eliminar"
                 type="button"
