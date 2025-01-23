@@ -142,11 +142,24 @@ export default function useHandleTasks() {
     }
   };
 
+  const deleteTask = async (taskId: string) => {
+    try {
+      await db.deleteTask(taskId);
+
+      mutateTasks((prev) => prev?.filter((task) => task.id !== taskId), false);
+
+      return { type: 'success', message: 'Tarea eliminada con exito' };
+    } catch {
+      return { type: 'error', message: 'Error al eliminar la tarea' };
+    }
+  };
+
   return {
     tasks,
     users,
     addTask,
     editTask,
     updateTaskStatus,
+    deleteTask,
   };
 }
